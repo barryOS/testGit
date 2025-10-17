@@ -1,0 +1,32 @@
+{
+  "ocr": {
+    "lang": "ch",
+    "use_gpu": false,
+    "use_angle_cls": true,
+    "confidence_threshold": 0.5
+  },
+  "preprocessing": {
+    "enabled": true,
+    "denoise": true,
+    "deskew": true,
+    "binarize": false,
+    "enhance_contrast": true,
+    "max_size": 2048
+  },
+  "pdf": {
+    "dpi": 300,
+    "first_page": null,
+    "last_page": null
+  },
+  "output": {
+    "directory": "./output",
+    "format": "txt",
+    "save_preprocessed": false,
+    "create_timestamp": true
+  },
+  "logging": {
+    "enabled": true,
+    "log_file": "./logs/ocr.log",
+    "level": "INFO"
+  }
+}
