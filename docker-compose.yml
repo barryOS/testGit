@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  ocr:
+    build: .
+    container_name: ocr-system
+    volumes:
+      - ./input:/app/input
+      - ./output:/app/output
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: ["-i", "/app/input", "-o", "/app/output", "--batch"]
+    
+  ocr-gpu:
+    build: .
+    container_name: ocr-system-gpu
+    volumes:
+      - ./input:/app/input
+      - ./output:/app/output
+    environment:
+      - PYTHONUNBUFFERED=1
+    runtime: nvidia
+    command: ["-i", "/app/input", "-o", "/app/output", "--batch", "--gpu"]
